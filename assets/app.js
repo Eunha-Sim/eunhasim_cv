@@ -346,4 +346,3 @@
 
   setLanguage(initialLanguage, { updateUrl: Boolean(queryLanguage) });
 })();
-
