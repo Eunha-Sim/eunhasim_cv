@@ -122,7 +122,7 @@ window.ResumeData = {
         { ko: "원료 하역기 자동화", en: "Raw-Material Ship Unloader Automation" },
         { ko: "선석 스케줄링·하역시간 예측", en: "Berth Scheduling and Unloading-Time Prediction" },
         { ko: "소결공장 대차이력 자동관리", en: "Automated Tracking of Sinter Plant Car History" },
-        { ko: "문서 자동작성 에이전트 개발", en: "Document-Authoring Agent Development" },
+        { ko: "AI Agent 기반 사내 업무 자동화 및 확산", en: "AI Agent-Based Internal Business Process Automation and Adoption" },
       ],
     },
   ],
