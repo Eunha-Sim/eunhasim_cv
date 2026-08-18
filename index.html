@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Physical AI와 로봇 시스템을 연구하는 심은하의 웹 이력서입니다."
+    />
+    <meta name="theme-color" content="#174f68" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="심은하 | Web Resume" />
+    <meta
+      property="og:description"
+      content="Education, research experience, career, awards, and technical skills."
+    />
+    <title>심은하 | Web Resume</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/profile-photo.js" defer></script>
+    <script src="assets/resume-data.js" defer></script>
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">본문으로 바로가기</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <nav class="primary-nav" aria-label="주요 섹션">
+          <a href="#education" data-nav="education">Education</a>
+          <a href="#research" data-nav="research">Research</a>
+          <a href="#career" data-nav="career">Career</a>
+          <a href="#awards" data-nav="awards">Awards</a>
+          <a href="#skills" data-nav="skills">Skills</a>
+        </nav>
+
+        <div class="header-actions">
+          <div class="language-switch" role="group" aria-label="언어 선택">
+            <button type="button" data-language="ko" aria-pressed="true">KO</button>
+            <button type="button" data-language="en" aria-pressed="false">EN</button>
+          </div>
+          <button class="print-button" id="print-button" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z" />
+            </svg>
+            <span id="print-label">인쇄 · PDF</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top" aria-labelledby="hero-name">
+        <div class="page-shell hero-inner">
+          <div class="profile-photo-frame">
+            <img id="profile-photo" alt="심은하 프로필 사진" />
+          </div>
+          <div class="hero-copy">
+            <p class="eyebrow" id="hero-eyebrow">WEB RESUME · 2026</p>
+            <h1 id="hero-name">심은하</h1>
+            <p class="hero-role" id="hero-role">Physical AI Researcher</p>
+            <p class="hero-summary" id="hero-summary">
+              로봇 지능과 제어 기술을 연구하고, 시뮬레이션에서 검증한 기술을 실제 산업 현장에 연결합니다.
+            </p>
+          </div>
+
+          <aside class="hero-contact" aria-label="연락처와 현재 소속">
+            <div class="contact-row">
+              <span class="contact-label" id="current-label">CURRENT</span>
+              <span id="current-value">포항산업과학연구원(RIST) · 책임연구원</span>
+            </div>
+            <a class="contact-row" href="mailto:sehrachel@naver.com">
+              <span class="contact-label">EMAIL</span>
+              <span>sehrachel@naver.com</span>
+            </a>
+            <div class="contact-row">
+              <span class="contact-label" id="phone-label">PHONE</span>
+              <span>+82 10-6632-7061</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <div class="page-shell resume-sheet">
+        <section class="resume-section" id="education" aria-labelledby="education-title">
+          <div class="section-heading">
+            <p class="section-number">01</p>
+            <div>
+              <h2 id="education-title">Education</h2>
+            </div>
+          </div>
+          <div class="timeline" id="education-list"></div>
+        </section>
+
+        <section class="resume-section" id="research" aria-labelledby="research-title">
+          <div class="section-heading">
+            <p class="section-number">02</p>
+            <div>
+              <h2 id="research-title">Research Experience</h2>
+              <p id="research-subtitle">학부연구생 및 석사 연구 경험</p>
+            </div>
+          </div>
+          <div class="timeline" id="research-list"></div>
+        </section>
+
+        <section class="resume-section" id="career" aria-labelledby="career-title">
+          <div class="section-heading">
+            <p class="section-number">03</p>
+            <div>
+              <h2 id="career-title">Career</h2>
+              <p id="career-subtitle">산업 연구 및 자동화 업무</p>
+            </div>
+          </div>
+          <div class="timeline" id="career-list"></div>
+        </section>
+
+        <section class="resume-section" id="awards" aria-labelledby="awards-title">
+          <div class="section-heading">
+            <p class="section-number">04</p>
+            <div>
+              <h2 id="awards-title">Awards &amp; Presentations</h2>
+              <p id="awards-subtitle">수상 및 학술 발표</p>
+            </div>
+          </div>
+          <div class="compact-list" id="awards-list"></div>
+        </section>
+
+        <section class="resume-section" id="skills" aria-labelledby="skills-title">
+          <div class="section-heading">
+            <p class="section-number">05</p>
+            <div>
+              <h2 id="skills-title">Skills</h2>
+              <p id="skills-subtitle">연구와 프로젝트에서 활용한 기술</p>
+            </div>
+          </div>
+          <div class="skill-groups" id="skills-list"></div>
+        </section>
+
+        <section class="resume-section" id="languages" aria-labelledby="languages-title">
+          <div class="section-heading">
+            <p class="section-number">06</p>
+            <div>
+              <h2 id="languages-title">Languages</h2>
+              <p id="languages-subtitle">어학 성적</p>
+            </div>
+          </div>
+          <div class="credential-grid" id="credentials-list"></div>
+        </section>
+      </div>
+    </main>
+
+    <dialog
+      class="poster-dialog"
+      id="poster-dialog"
+      aria-labelledby="poster-dialog-title"
+      aria-describedby="poster-dialog-topic"
+    >
+      <div class="poster-dialog-panel">
+        <header class="poster-dialog-header">
+          <div>
+            <p class="poster-dialog-kicker" id="poster-dialog-kicker">AWARD POSTER</p>
+            <h2 id="poster-dialog-title">Poster</h2>
+            <p id="poster-dialog-topic"></p>
+          </div>
+          <button class="poster-close" id="poster-close" type="button" aria-label="포스터 닫기">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 5l14 14M19 5L5 19" />
+            </svg>
+          </button>
+        </header>
+        <div class="poster-viewer">
+          <img id="poster-dialog-image" alt="" />
+        </div>
+      </div>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="page-shell footer-inner">
+        <p id="footer-copy">© 2026 심은하. 마지막 업데이트: 2026년 8월</p>
+        <a href="mailto:sehrachel@naver.com" id="footer-contact">Contact</a>
+      </div>
+    </footer>
+  </body>
+</html>
