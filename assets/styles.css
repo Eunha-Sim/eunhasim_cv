@@ -161,33 +161,6 @@ button {
   background: var(--steel);
 }
 
-.print-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 12px;
-  color: var(--ink);
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 0.78rem;
-  font-weight: 700;
-}
-
-.print-button:hover {
-  border-color: var(--steel-bright);
-}
-
-.print-button svg {
-  width: 16px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.7;
-}
-
 .hero {
   position: relative;
   color: var(--ink);
@@ -217,6 +190,9 @@ button {
   background: #e7edf0;
   border: 1px solid var(--line);
   border-radius: 10px;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }
 
 .profile-photo-frame img {
@@ -225,6 +201,8 @@ button {
   height: 100%;
   object-fit: cover;
   object-position: center top;
+  pointer-events: none;
+  -webkit-user-drag: none;
 }
 
 .eyebrow {
@@ -469,12 +447,35 @@ a.contact-row:hover span:last-child {
   margin: 0;
   color: var(--ink-soft);
   font-size: 0.83rem;
+  font-weight: 700;
   line-height: 1.42;
 }
 
 .project-list span {
-  color: var(--steel-bright);
+  color: var(--ink-soft);
   font-weight: 800;
+}
+
+.project-list a {
+  width: fit-content;
+  color: inherit;
+  border-bottom: 1px solid #c5d2d8;
+  font-weight: inherit;
+  text-decoration: none;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+.project-list a:hover,
+.project-list a:focus-visible {
+  color: var(--steel-bright);
+  border-bottom-color: var(--steel-bright);
+}
+
+.project-list .external-marker {
+  margin-left: 4px;
+  font-size: 0.72rem;
 }
 
 .experience-links {
@@ -862,14 +863,6 @@ body.modal-open {
 
   .header-inner {
     gap: 14px;
-  }
-
-  .print-button span {
-    display: none;
-  }
-
-  .print-button {
-    padding: 8px;
   }
 
   .hero-inner {
