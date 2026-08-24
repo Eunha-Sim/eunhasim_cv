@@ -29,8 +29,7 @@ window.ResumeData = {
       institution: { ko: "중앙대학교", en: "Chung-Ang University" },
       title: { ko: "기계공학부 · 공학사 · 졸업", en: "B.S. in Mechanical Engineering · Graduated" },
       meta: [
-        { ko: "전체 평점 4.11 / 4.5", en: "GPA 4.11 / 4.5" },
-        { ko: "전공 평점 4.02 / 4.5", en: "Major GPA 4.02 / 4.5" },
+        { ko: "평점 4.11 / 4.5", en: "GPA 4.11 / 4.5" },
       ],
     },
     {
@@ -63,7 +62,10 @@ window.ResumeData = {
       projects: [
         { ko: "EMG 센서 기반 무게 측정 시스템 개발", en: "EMG Sensor-Based Weight Estimation System" },
         { ko: "Instantaneous Cost Mapping 기반 신진대사 에너지 고속 측정 플랫폼", en: "Fast Metabolic Cost Estimation Platform Using Instantaneous Cost Mapping" },
-        { ko: "LabVIEW·EtherCAT 기반 모터 제어 시스템 구축", en: "LabVIEW and EtherCAT-Based Motor Control System" },
+        {
+          ko: "로봇 시스템 통합 설계·구축 (CAN·EtherCAT 통신, LabVIEW 기반 모터 제어)",
+          en: "Integrated Robot System Design and Implementation (CAN/EtherCAT Communication, LabVIEW-Based Motor Control)",
+        },
       ],
     },
     {
@@ -81,6 +83,14 @@ window.ResumeData = {
       ],
       links: [
         {
+          label: { ko: "MPC·CARLA 주행 영상", en: "MPC·CARLA driving demo" },
+          title: {
+            ko: "MPC 기반 차량 경로 추종 제어기 CARLA 시뮬레이션 영상",
+            en: "CARLA simulation of the MPC-based vehicle path-tracking controller",
+          },
+          url: "assets/videos/snu-mpc-carla-demo.mp4",
+        },
+        {
           label: { ko: "연구 발표 영상", en: "Research presentation video" },
           title: {
             ko: "MPC 기반 차량 경로 추종 제어기 CARLA Simulator 구현 발표",
@@ -93,36 +103,68 @@ window.ResumeData = {
     {
       sortKey: "2024-03",
       period: "2024.03 — 2026.02",
-      institution: { ko: "KAIST 로봇 및 시뮬레이션 연구실", en: "Robotics & Simulation Laboratory, KAIST" },
+      institution: {
+        ko: "KAIST 로봇 및 시뮬레이션 연구실 (지도교수: 이두용)",
+        en: "Robotics & Simulation Laboratory, KAIST (Advisor: Prof. Doo Yong Lee)",
+      },
       title: { ko: "석사연구원", en: "Graduate Researcher" },
       projects: [
-        { ko: "적응형 목표 엔트로피 기반 낙석 제거 자율주행 로봇", en: "Autonomous Debris-Removal Robot with Adaptive Target Entropy" },
-        { ko: "Point Cloud 기반 Haptic Rendering 원격 로봇 제어", en: "Point Cloud-Based Haptic Rendering for Remote Robot Control" },
-      ],
-      links: [
         {
-          label: { ko: "연구 시뮬레이션 보기", en: "View research simulation" },
-          title: {
+          ko: "적응형 목표 엔트로피 기반 낙석 제거 자율주행 로봇",
+          en: "Autonomous Debris-Removal Robot with Adaptive Target Entropy",
+          url: "assets/videos/kaist-debris-removal-simulation.mp4",
+          linkTitle: {
             ko: "Gazebo 기반 낙석 제거 자율주행 로봇 연구 시뮬레이션",
             en: "Gazebo simulation of the autonomous debris-removal robot",
           },
-          url: "assets/videos/kaist-debris-removal-simulation.mp4",
+        },
+        {
+          ko: "Point Cloud 기반 Haptic Rendering 원격 로봇 제어",
+          en: "Point Cloud-Based Haptic Rendering for Remote Robot Control",
+          url: "assets/videos/kaist-haptic-teleoperation.mp4?v=2.24",
+          linkTitle: {
+            ko: "Point Cloud 기반 Haptic Rendering 원격 로봇 제어 영상",
+            en: "Point cloud-based haptic rendering and robot teleoperation demo",
+          },
         },
       ],
     },
-  ],
-
-  career: [
     {
       sortKey: "2026-01",
       period: { ko: "2026.01 — 현재", en: "2026.01 — Present" },
       institution: { ko: "포항산업과학연구원(RIST)", en: "Research Institute of Industrial Science & Technology (RIST)" },
-      title: { ko: "엔지니어링솔루션연구그룹 · 책임연구원", en: "Engineering Solutions Research Group · Researcher" },
+      title: { ko: "소재공정연구그룹 · 책임연구원", en: "Material Process Research Group · Researcher" },
       projects: [
-        { ko: "원료 하역기 자동화", en: "Raw-Material Ship Unloader Automation" },
+        {
+          ko: "대형원료 하역기 자동화",
+          en: "Large-Scale Raw-Material Ship Unloader Automation",
+          note: { ko: "특허 출원 1건", en: "1 patent application" },
+          url: {
+            ko: "projects/large-ship-unloader.html?lang=ko&v=2.29",
+            en: "projects/large-ship-unloader.html?lang=en&v=2.29",
+          },
+          newTab: false,
+          linkTitle: {
+            ko: "대형원료 하역기 자동화 시뮬레이션과 특허 보기",
+            en: "View the large-scale ship unloader simulation and patent application",
+          },
+        },
         { ko: "선석 스케줄링·하역시간 예측", en: "Berth Scheduling and Unloading-Time Prediction" },
         { ko: "소결공장 대차이력 자동관리", en: "Automated Tracking of Sinter Plant Car History" },
-        { ko: "AI Agent 기반 사내 업무 자동화 및 확산", en: "AI Agent-Based Internal Business Process Automation and Adoption" },
+        {
+          ko: "AI Agent 기반 사내 업무 자동화 및 확산",
+          en: "AI Agent-Based Internal Business Process Automation and Adoption",
+          note: { ko: "산업현장 3D 모델링", en: "industrial 3D modeling" },
+          url: {
+            ko: "projects/industrial-3d-modeling-agent.html?lang=ko&v=2.29",
+            en: "projects/industrial-3d-modeling-agent.html?lang=en&v=2.29",
+          },
+          newTab: false,
+          linkTitle: {
+            ko: "AI Agent 기반 산업현장 3D 모델링·지식 구조화 프로젝트 보기",
+            en: "View the AI agent project for industrial 3D modeling and knowledge structuring",
+          },
+        },
       ],
     },
   ],
@@ -195,7 +237,7 @@ window.ResumeData = {
     },
     {
       category: { ko: "AI & Data", en: "AI & Data" },
-      items: ["Imitation Learning", "Reinforcement Learning", "GPR", "SVM", "CatBoost", "LightGBM"],
+      items: ["LLM Agent", "Prompt Engineering", "Imitation Learning", "Reinforcement Learning", "GPR", "SVM", "CatBoost", "LightGBM"],
     },
     {
       category: { ko: "Perception & Sensors", en: "Perception & Sensors" },

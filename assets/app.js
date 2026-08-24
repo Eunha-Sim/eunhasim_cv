@@ -14,7 +14,6 @@
       skip: "본문으로 바로가기",
       navLabel: "주요 섹션",
       languageLabel: "언어 선택",
-      print: "인쇄 · PDF",
       eyebrow: "WEB RESUME · 2026",
       current: "CURRENT",
       phone: "PHONE",
@@ -22,14 +21,12 @@
       nav: {
         education: "Education",
         research: "Research",
-        career: "Career",
         awards: "Awards",
         skills: "Skills",
       },
       sections: {
         education: ["Education", "고등학교부터 석사까지의 학업 이력"],
-        research: ["Research Experience", "학부연구생 및 석사 연구 경험"],
-        career: ["Career", "산업 연구 및 자동화 업무"],
+        research: ["Research Experience", ""],
         awards: ["Awards & Presentations", "수상 및 학술 발표"],
         skills: ["Skills", "연구와 프로젝트에서 활용한 기술"],
         languages: ["Languages", "어학 성적"],
@@ -48,7 +45,6 @@
       skip: "Skip to main content",
       navLabel: "Primary navigation",
       languageLabel: "Select language",
-      print: "Print · PDF",
       eyebrow: "WEB RESUME · 2026",
       current: "CURRENT",
       phone: "PHONE",
@@ -56,14 +52,12 @@
       nav: {
         education: "Education",
         research: "Research",
-        career: "Career",
         awards: "Awards",
         skills: "Skills",
       },
       sections: {
         education: ["Education", "Academic history from high school through master's degree"],
-        research: ["Research Experience", "Undergraduate and graduate research appointments"],
-        career: ["Career", "Industrial research and automation"],
+        research: ["Research Experience", ""],
         awards: ["Awards & Presentations", "Awards and academic presentations"],
         skills: ["Skills", "Technologies used in research and engineering projects"],
         languages: ["Languages", "English proficiency scores"],
@@ -146,11 +140,25 @@
               <p class="item-title">${escapeHtml(localized(item.title, language))}</p>
               <div class="project-list" aria-label="${escapeHtml(copy[language].projectLabel)}">
                 ${item.projects
-                  .map(
-                    (project) => `
-                      <p><span aria-hidden="true">↳</span>${escapeHtml(localized(project, language))}</p>
-                    `,
-                  )
+                  .map((project) => {
+                    const projectUrl = localized(project.url, language);
+                    const linkAttributes = project.newTab === false ? "" : ' target="_blank" rel="noopener noreferrer"';
+                    const projectNote = localized(project.note, language);
+                    const projectLabel = escapeHtml(
+                      projectNote ? `${localized(project, language)} (${projectNote})` : localized(project, language),
+                    );
+
+                    return `
+                      <p>
+                        <span aria-hidden="true">↳</span>
+                        ${
+                          projectUrl
+                            ? `<a href="${escapeHtml(projectUrl)}"${linkAttributes} title="${escapeHtml(localized(project.linkTitle, language))}">${projectLabel}<span class="external-marker" aria-hidden="true">↗</span></a>`
+                            : projectLabel
+                        }
+                      </p>
+                    `;
+                  })
                   .join("")}
               </div>
               ${
@@ -280,7 +288,6 @@
     setText("#current-label", labels.current);
     setText("#current-value", localized(data.profile.current, selected));
     setText("#phone-label", labels.phone);
-    setText("#print-label", labels.print);
     setText("#footer-copy", labels.footer);
     setText("#footer-contact", labels.contact);
 
@@ -295,7 +302,6 @@
 
     renderEducation(selected);
     renderExperience("#research-list", data.research, selected);
-    renderExperience("#career-list", data.career, selected);
     renderAwards(selected);
     renderSkills(selected);
     renderCredentials(selected);
@@ -325,8 +331,6 @@
     button.addEventListener("click", () => setLanguage(button.dataset.language));
   });
 
-  document.querySelector("#print-button").addEventListener("click", () => window.print());
-
   const posterDialog = document.querySelector("#poster-dialog");
   document.querySelector("#poster-close").addEventListener("click", () => posterDialog.close());
   posterDialog.addEventListener("click", (event) => {
@@ -338,10 +342,14 @@
   });
 
   const profilePhoto = document.querySelector("#profile-photo");
+  const profilePhotoFrame = profilePhoto.closest(".profile-photo-frame");
+  profilePhoto.addEventListener("dragstart", (event) => event.preventDefault());
+  profilePhotoFrame.addEventListener("contextmenu", (event) => event.preventDefault());
+
   if (window.ResumeProfilePhoto) {
     profilePhoto.src = window.ResumeProfilePhoto;
   } else {
-    profilePhoto.closest(".profile-photo-frame").hidden = true;
+    profilePhotoFrame.hidden = true;
   }
 
   setLanguage(initialLanguage, { updateUrl: Boolean(queryLanguage) });
