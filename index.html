@@ -15,10 +15,10 @@
       content="Education, research experience, career, awards, and technical skills."
     />
     <title>심은하 | Web Resume</title>
-    <link rel="stylesheet" href="assets/styles.css?v=2.11" />
-    <script src="assets/profile-photo.js?v=2.11" defer></script>
-    <script src="assets/resume-data.js?v=2.11" defer></script>
-    <script src="assets/app.js?v=2.11" defer></script>
+    <link rel="stylesheet" href="assets/styles.css?v=2.29" />
+    <script src="assets/profile-photo.js?v=2.29" defer></script>
+    <script src="assets/resume-data.js?v=2.29" defer></script>
+    <script src="assets/app.js?v=2.29" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main-content">본문으로 바로가기</a>
@@ -28,7 +28,6 @@
         <nav class="primary-nav" aria-label="주요 섹션">
           <a href="#education" data-nav="education">Education</a>
           <a href="#research" data-nav="research">Research</a>
-          <a href="#career" data-nav="career">Career</a>
           <a href="#awards" data-nav="awards">Awards</a>
           <a href="#skills" data-nav="skills">Skills</a>
         </nav>
@@ -38,12 +37,6 @@
             <button type="button" data-language="ko" aria-pressed="true">KO</button>
             <button type="button" data-language="en" aria-pressed="false">EN</button>
           </div>
-          <button class="print-button" id="print-button" type="button">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z" />
-            </svg>
-            <span id="print-label">인쇄 · PDF</span>
-          </button>
         </div>
       </div>
     </header>
@@ -52,7 +45,7 @@
       <section class="hero" id="top" aria-labelledby="hero-name">
         <div class="page-shell hero-inner">
           <div class="profile-photo-frame">
-            <img id="profile-photo" alt="심은하 프로필 사진" />
+            <img id="profile-photo" alt="심은하 프로필 사진" draggable="false" />
           </div>
           <div class="hero-copy">
             <p class="eyebrow" id="hero-eyebrow">WEB RESUME · 2026</p>
@@ -96,26 +89,14 @@
             <p class="section-number">02</p>
             <div>
               <h2 id="research-title">Research Experience</h2>
-              <p id="research-subtitle">학부연구생 및 석사 연구 경험</p>
             </div>
           </div>
           <div class="timeline" id="research-list"></div>
         </section>
 
-        <section class="resume-section" id="career" aria-labelledby="career-title">
-          <div class="section-heading">
-            <p class="section-number">03</p>
-            <div>
-              <h2 id="career-title">Career</h2>
-              <p id="career-subtitle">산업 연구 및 자동화 업무</p>
-            </div>
-          </div>
-          <div class="timeline" id="career-list"></div>
-        </section>
-
         <section class="resume-section" id="awards" aria-labelledby="awards-title">
           <div class="section-heading">
-            <p class="section-number">04</p>
+            <p class="section-number">03</p>
             <div>
               <h2 id="awards-title">Awards &amp; Presentations</h2>
               <p id="awards-subtitle">수상 및 학술 발표</p>
@@ -126,7 +107,7 @@
 
         <section class="resume-section" id="skills" aria-labelledby="skills-title">
           <div class="section-heading">
-            <p class="section-number">05</p>
+            <p class="section-number">04</p>
             <div>
               <h2 id="skills-title">Skills</h2>
               <p id="skills-subtitle">연구와 프로젝트에서 활용한 기술</p>
@@ -137,7 +118,7 @@
 
         <section class="resume-section" id="languages" aria-labelledby="languages-title">
           <div class="section-heading">
-            <p class="section-number">06</p>
+            <p class="section-number">05</p>
             <div>
               <h2 id="languages-title">Languages</h2>
               <p id="languages-subtitle">어학 성적</p>
