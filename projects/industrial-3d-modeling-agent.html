@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      data-ko="현장 사진과 담당자의 설명을 AI Agent가 구조화해 인터랙티브 3D 산업현장 모델로 변환하는 프레임워크입니다."
+      data-en="An AI agent framework that structures site photographs and field knowledge into interactive 3D industrial site models."
+      content="현장 사진과 담당자의 설명을 AI Agent가 구조화해 인터랙티브 3D 산업현장 모델로 변환하는 프레임워크입니다."
+    />
+    <meta name="theme-color" content="#174f68" />
+    <title
+      data-ko="AI Agent 기반 산업현장 3D 모델링·지식 구조화 | 심은하"
+      data-en="AI Agent for Industrial 3D Modeling &amp; Knowledge Structuring | Eunha Sim"
+    >
+      AI Agent 기반 산업현장 3D 모델링·지식 구조화 | 심은하
+    </title>
+    <link rel="stylesheet" href="../assets/styles.css?v=2.29" />
+    <link rel="stylesheet" href="../assets/project-detail.css?v=2.29" />
+  </head>
+  <body class="project-detail-page">
+    <a class="skip-link" href="#project-content" data-ko="본문으로 바로가기" data-en="Skip to main content">본문으로 바로가기</a>
+
+    <header class="project-detail-nav">
+      <div class="project-detail-nav-inner">
+        <a class="back-link" id="resume-back-link" href="../index.html?lang=ko#research">
+          <span aria-hidden="true">←</span>
+          <span data-ko="이력서로 돌아가기" data-en="Back to resume">이력서로 돌아가기</span>
+        </a>
+        <div class="language-switch" role="group" aria-label="언어 선택" id="project-language-switch">
+          <button type="button" data-language="ko" aria-pressed="true">KO</button>
+          <button type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell project-detail-main" id="project-content">
+      <section class="project-detail-hero" aria-labelledby="project-title">
+        <p class="project-detail-kicker">RIST · AI AGENT · INDUSTRIAL 3D</p>
+        <h1
+          id="project-title"
+          data-ko="AI Agent 기반 산업현장 3D 모델링·지식 구조화"
+          data-en="AI Agent for Industrial 3D Modeling &amp; Knowledge Structuring"
+        >
+          AI Agent 기반 산업현장 3D 모델링·지식 구조화
+        </h1>
+        <p
+          data-ko="현장 사진과 담당자의 비정형 설명을 분석하고, AI 기반 적응형 인터뷰를 통해 부족한 현장 정보를 보완하여 인터랙티브 3D 현장 모델로 변환하는 Agent Framework를 개발했습니다."
+          data-en="Developed an AI agent framework that analyzes industrial site images and unstructured field knowledge, resolves missing information through adaptive interviews, and transforms validated site data into interactive 3D environments."
+        >
+          현장 사진과 담당자의 비정형 설명을 분석하고, AI 기반 적응형 인터뷰를 통해 부족한 현장 정보를 보완하여 인터랙티브 3D 현장 모델로 변환하는 Agent Framework를 개발했습니다.
+        </p>
+        <div class="project-detail-tags" aria-label="Project keywords">
+          <span>LLM Agent</span>
+          <span>Adaptive Interview</span>
+          <span>Knowledge Structuring</span>
+          <span>Industrial 3D Visualization</span>
+        </div>
+      </section>
+
+                  <section class="project-detail-panel implementation-panel" aria-labelledby="problem-title">
+        <div class="project-detail-heading implementation-heading">
+          <div>
+            <p class="project-detail-section-label">PROBLEM</p>
+            <h2 id="problem-title" data-ko="문제 정의" data-en="Problem">문제 정의</h2>
+          </div>
+        </div>
+
+        <p
+          class="implementation-motivation"
+          data-ko="산업 현장의 설비 배치와 연결 관계는 사진이나 도면만으로 완전히 전달하기 어렵고, 실제 현장 정보의 상당 부분은 담당자의 경험과 설명에 의존합니다."
+          data-en="Industrial site layouts and equipment relationships are difficult to capture completely through images or drawings alone, and much of the critical information remains in the tacit knowledge of field engineers."
+        >
+          산업 현장의 설비 배치와 연결 관계는 사진이나 도면만으로 완전히 전달하기 어렵고, 실제 현장 정보의 상당 부분은 담당자의 경험과 설명에 의존합니다.
+        </p>
+
+        <p
+          class="implementation-motivation"
+          data-ko="기존에는 현장별 3D 공유 화면을 제작하기 위해 개발자가 설비 위치와 형상을 직접 확인하고 Three.js 코드를 개별 작성해야 했습니다."
+          data-en="Previously, building a shared 3D view for each site required a developer to verify equipment positions and shapes in person and hand-write Three.js code for every site."
+        >
+          기존에는 현장별 3D 공유 화면을 제작하기 위해 개발자가 설비 위치와 형상을 직접 확인하고 Three.js 코드를 개별 작성해야 했습니다.
+        </p>
+
+        <p
+          class="implementation-motivation"
+          data-ko="이를 개선하기 위해 현장 사진과 담당자의 설명으로부터 필요한 정보를 AI Agent가 수집하고, 정보가 부족한 경우 추가 질문을 수행한 뒤 구조화된 현장 데이터와 3D 모델을 생성하는 프레임워크를 설계했습니다."
+          data-en="To address this, the project introduces an agent workflow that collects information from site photographs and field descriptions, asks follow-up questions where information is insufficient, and then generates structured site data and a reusable 3D model."
+        >
+          이를 개선하기 위해 현장 사진과 담당자의 설명으로부터 필요한 정보를 AI Agent가 수집하고, 정보가 부족한 경우 추가 질문을 수행한 뒤 구조화된 현장 데이터와 3D 모델을 생성하는 프레임워크를 설계했습니다.
+        </p>
+      </section>
+
+      <section class="project-detail-panel implementation-panel" aria-labelledby="design-title">
+        <div class="project-detail-heading implementation-heading">
+          <div>
+            <p class="project-detail-section-label">SYSTEM DESIGN</p>
+            <h2 id="design-title" data-ko="시스템 구성" data-en="System Design">시스템 구성</h2>
+          </div>
+        </div>
+
+        <div class="technical-detail-grid pipeline-flow" aria-label="Processing pipeline">
+          <article>
+            <p class="technical-detail-label">01</p>
+            <h3 data-ko="현장 사진·설명" data-en="Field Images &amp; Descriptions">현장 사진·설명</h3>
+          </article>
+          <article>
+            <p class="technical-detail-label">02</p>
+            <h3 data-ko="정보 추출" data-en="Information Extraction">정보 추출</h3>
+          </article>
+          <article>
+            <p class="technical-detail-label">03</p>
+            <h3 data-ko="공백·모순 탐지" data-en="Gap &amp; Conflict Detection">공백·모순 탐지</h3>
+          </article>
+          <article>
+            <p class="technical-detail-label">04</p>
+            <h3 data-ko="적응형 인터뷰" data-en="Adaptive Interview">적응형 인터뷰</h3>
+          </article>
+          <article>
+            <p class="technical-detail-label">05</p>
+            <h3 data-ko="구조화 현장 데이터" data-en="Structured Site Data">구조화 현장 데이터</h3>
+          </article>
+          <article>
+            <p class="technical-detail-label">06</p>
+            <h3 data-ko="Three.js 장면 생성" data-en="Three.js Scene Generation">Three.js 장면 생성</h3>
+          </article>
+          <article>
+            <p class="technical-detail-label">07</p>
+            <h3 data-ko="인터랙티브 3D 현장" data-en="Interactive 3D Site">인터랙티브 3D 현장</h3>
+          </article>
+        </div>
+
+        <div class="technical-detail-grid">
+          <article>
+            <p class="technical-detail-label">ADAPTIVE FIELD INTERVIEW</p>
+            <h3 data-ko="적응형 현장 인터뷰" data-en="Adaptive Field Interview">적응형 현장 인터뷰</h3>
+            <p
+              data-ko="초기 사진과 설명만으로 확인할 수 없는 설비 치수, 위치, 연결 관계 등의 정보를 분석하고 필요한 후속 질문을 생성합니다."
+              data-en="Identifies information that cannot be resolved from the initial images and descriptions, and generates targeted follow-up questions."
+            >
+              초기 사진과 설명만으로 확인할 수 없는 설비 치수, 위치, 연결 관계 등의 정보를 분석하고 필요한 후속 질문을 생성합니다.
+            </p>
+          </article>
+
+          <article>
+            <p class="technical-detail-label">GAP &amp; CONFLICT DETECTION</p>
+            <h3 data-ko="정보 공백·모순 탐지" data-en="Gap &amp; Conflict Detection">정보 공백·모순 탐지</h3>
+            <p
+              data-ko="수집된 정보에서 누락된 항목과 서로 모순되거나 불확실한 정보를 탐지하고 필요한 경우 재질의합니다."
+              data-en="Detects missing, uncertain, or conflicting information and triggers additional clarification when required."
+            >
+              수집된 정보에서 누락된 항목과 서로 모순되거나 불확실한 정보를 탐지하고 필요한 경우 재질의합니다.
+            </p>
+          </article>
+
+          <article>
+            <p class="technical-detail-label">STRUCTURED SITE KNOWLEDGE</p>
+            <h3 data-ko="현장 지식 구조화" data-en="Structured Site Knowledge">현장 지식 구조화</h3>
+            <p
+              data-ko="인터뷰에서 얻은 현장 정보를 설비, 치수, 위치, 연결 관계 등의 구조화된 데이터로 변환하고 각 항목의 확신도 상태를 함께 관리합니다."
+              data-en="Transforms field knowledge into structured site data representing equipment, dimensions, positions, and relationships, tracking a confidence state for each item."
+            >
+              인터뷰에서 얻은 현장 정보를 설비, 치수, 위치, 연결 관계 등의 구조화된 데이터로 변환하고 각 항목의 확신도 상태를 함께 관리합니다.
+            </p>
+            <div class="tag-list">
+              <span>Confirmed</span>
+              <span>Estimated</span>
+              <span>Candidate</span>
+              <span>Conflict / Unknown</span>
+            </div>
+          </article>
+
+          <article>
+            <p class="technical-detail-label">AUTOMATED 3D VISUALIZATION</p>
+            <h3 data-ko="3D 시각화 자동 생성" data-en="Automated 3D Visualization">3D 시각화 자동 생성</h3>
+            <p
+              data-ko="구조화된 현장 데이터를 공통 Three.js 렌더링 프레임워크에 입력하여 설비 배치, 연결 관계, 라벨 및 hotspot을 포함하는 인터랙티브 3D 환경을 생성합니다."
+              data-en="Generates interactive Three.js environments from structured site data, including equipment layouts, relationships, labels, and hotspots."
+            >
+              구조화된 현장 데이터를 공통 Three.js 렌더링 프레임워크에 입력하여 설비 배치, 연결 관계, 라벨 및 hotspot을 포함하는 인터랙티브 3D 환경을 생성합니다.
+            </p>
+          </article>
+        </div>
+
+        <div class="dynamics-detail">
+          <div class="dynamics-copy">
+            <p class="project-detail-section-label">ARCHITECTURE</p>
+            <h3 data-ko="렌더링 코드와 현장 데이터의 분리" data-en="Separation of Rendering Code and Site Data">
+              렌더링 코드와 현장 데이터의 분리
+            </h3>
+            <p
+              data-ko="현장마다 새로운 Three.js 코드를 처음부터 작성하는 대신, 공통 렌더링 프레임워크와 현장별 JSON 데이터를 분리하는 구조로 설계했습니다."
+              data-en="Rather than writing new Three.js code from scratch for each site, the system separates a common rendering framework from site-specific JSON data."
+            >
+              현장마다 새로운 Three.js 코드를 처음부터 작성하는 대신, 공통 렌더링 프레임워크와 현장별 JSON 데이터를 분리하는 구조로 설계했습니다.
+            </p>
+            <p
+              data-ko="새로운 현장을 추가할 때 렌더러는 그대로 두고 구조화된 데이터만 교체하면 되므로, 동일한 프레임워크를 여러 현장에 재사용할 수 있습니다."
+              data-en="Adding a new site replaces only the structured data while the renderer stays unchanged, so one framework serves many sites."
+            >
+              새로운 현장을 추가할 때 렌더러는 그대로 두고 구조화된 데이터만 교체하면 되므로, 동일한 프레임워크를 여러 현장에 재사용할 수 있습니다.
+            </p>
+          </div>
+
+          <div class="dynamics-equation" aria-label="Structured site data example">
+            <code>scene-framework.js + site-{id}.json</code>
+            <pre>{
+  "site": "air-compressor-station",
+  "equipment": [
+    {
+      "id": "compressor-01",
+      "type": "air_compressor",
+      "position": [2.4, 0.0, 1.8],
+      "dimensions": [1.8, 1.6, 0.9],
+      "connections": ["air-tank-01"],
+      "confidence": "confirmed"
+    }
+  ]
+}</pre>
+            <p
+              data-ko="현장별 JSON만 교체하면 동일한 렌더러가 그대로 재사용됩니다."
+              data-en="Swapping the site JSON alone reuses the identical renderer."
+            >
+              현장별 JSON만 교체하면 동일한 렌더러가 그대로 재사용됩니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-detail-panel implementation-panel" aria-labelledby="inputs-title">
+        <div class="project-detail-heading implementation-heading">
+          <div>
+            <p class="project-detail-section-label">INPUT IMAGES</p>
+            <h2 id="inputs-title" data-ko="입력 이미지" data-en="Input Images">입력 이미지</h2>
+          </div>
+        </div>
+
+        <p
+          class="implementation-motivation"
+          data-ko="AI Agent가 3D 모델링과 현장 정보 구조화에 사용한 입력 이미지입니다. 두 현장 모두 공개 가능한 테스트 현장으로 구성했습니다."
+          data-en="The input images the agent used for 3D modeling and knowledge structuring. Both are publicly shareable test sites."
+        >
+          AI Agent가 3D 모델링과 현장 정보 구조화에 사용한 입력 이미지입니다. 두 현장 모두 공개 가능한 테스트 현장으로 구성했습니다.
+        </p>
+
+        <div class="technical-detail-grid">
+            <figure class="image-figure">
+              <a
+                href="../assets/project-3d-agent/input-water-tank-site.png?v=2.29"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-title-ko="물탱크·펌프 현장 입력 사진 원본 보기"
+                data-title-en="View the full-size input photographs for the water tank and pump site"
+                title="물탱크·펌프 현장 입력 사진 원본 보기"
+              >
+                <img
+                  src="../assets/project-3d-agent/input-water-tank-site.png?v=2.29"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  alt="물탱크·펌프 현장 입력 사진 6장 모음"
+                />
+              </a>
+              <figcaption
+                class="implementation-motivation"
+                data-ko="입력 사진 6장 · 현장 전경, 물탱크 정면, 펌프 2대, 배관 및 압력계, 제어반 (클릭하면 원본이 열립니다)"
+                data-en="Six input photographs · site overview, tank elevation, two pumps, piping and gauge, control panel (click to open full size)"
+              >
+                입력 사진 6장 · 현장 전경, 물탱크 정면, 펌프 2대, 배관 및 압력계, 제어반 (클릭하면 원본이 열립니다)
+              </figcaption>
+            </figure>
+
+            <figure class="image-figure">
+              <a
+                href="../assets/project-3d-agent/input-air-compressor-site.png?v=2.29"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-title-ko="공기압축기 스테이션 입력 사진 원본 보기"
+                data-title-en="View the full-size input photographs for the air compressor station"
+                title="공기압축기 스테이션 입력 사진 원본 보기"
+              >
+                <img
+                  src="../assets/project-3d-agent/input-air-compressor-site.png?v=2.29"
+                  width="1536"
+                  height="1024"
+                  loading="lazy"
+                  alt="공기압축기 스테이션 입력 사진 8장 및 현장 정보 모음"
+                />
+              </a>
+              <figcaption
+                class="implementation-motivation"
+                data-ko="입력 사진 8장 · 전체 조감, 컴프레서 2대, 에어탱크, 드라이어, 필터, 배관·밸브, 제어반, 통로 (클릭하면 원본이 열립니다)"
+                data-en="Eight input photographs · overview, two compressors, air tank, dryer, filters, piping and valves, control panel, walkway (click to open full size)"
+              >
+                입력 사진 8장 · 전체 조감, 컴프레서 2대, 에어탱크, 드라이어, 필터, 배관·밸브, 제어반, 통로 (클릭하면 원본이 열립니다)
+              </figcaption>
+            </figure>
+        </div>
+      </section>
+
+      <section class="project-detail-panel" aria-labelledby="demo-one-title">
+        <div class="project-detail-heading">
+          <div>
+            <p class="project-detail-section-label">LIVE DEMO 01</p>
+            <h2 id="demo-one-title" data-ko="물탱크·펌프 현장" data-en="Water Tank and Pump Site">물탱크·펌프 현장</h2>
+          </div>
+          <a class="project-external-link" id="demo-one-link" target="_blank" rel="noopener noreferrer">
+            <span data-ko="새 창에서 보기" data-en="Open in a new tab">새 창에서 보기</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="simulator-frame demo-frame">
+          <iframe
+            id="demo-one-frame"
+            data-title-ko="물탱크·펌프 현장 인터랙티브 3D 데모"
+            data-title-en="Interactive 3D demo of the water tank and pump site"
+            title="물탱크·펌프 현장 인터랙티브 3D 데모"
+            loading="eager"
+            allow="fullscreen"
+          ></iframe>
+        </div>
+        <p
+          class="simulator-note"
+          data-ko="위 입력 사진 6장과 담당자 설명으로부터 생성한 3D 현장입니다. 화면이 보이지 않으면 ‘새 창에서 보기’를 이용해 주세요."
+          data-en="Generated from the six input photographs above and the accompanying field description. If the viewer does not appear, use ‘Open in a new tab.’"
+        >
+          위 입력 사진 6장과 담당자 설명으로부터 생성한 3D 현장입니다. 화면이 보이지 않으면 ‘새 창에서 보기’를 이용해 주세요.
+        </p>
+      </section>
+
+      <section class="project-detail-panel" aria-labelledby="demo-two-title">
+        <div class="project-detail-heading">
+          <div>
+            <p class="project-detail-section-label">LIVE DEMO 02</p>
+            <h2 id="demo-two-title" data-ko="공기압축기 스테이션" data-en="Air Compressor Station">공기압축기 스테이션</h2>
+          </div>
+          <a class="project-external-link" id="demo-two-link" target="_blank" rel="noopener noreferrer">
+            <span data-ko="새 창에서 보기" data-en="Open in a new tab">새 창에서 보기</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="simulator-frame demo-frame">
+          <iframe
+            id="demo-two-frame"
+            data-title-ko="공기압축기 스테이션 인터랙티브 3D 데모"
+            data-title-en="Interactive 3D demo of the air compressor station"
+            title="공기압축기 스테이션 인터랙티브 3D 데모"
+            loading="lazy"
+            allow="fullscreen"
+          ></iframe>
+        </div>
+        <p
+          class="simulator-note"
+          data-ko="동일한 렌더링 프레임워크에 다른 현장 데이터만 입력해 생성한 3D 현장입니다."
+          data-en="Generated by feeding only different site data into the identical rendering framework."
+        >
+          동일한 렌더링 프레임워크에 다른 현장 데이터만 입력해 생성한 3D 현장입니다.
+        </p>
+      </section>
+
+      <section class="project-detail-panel implementation-panel" aria-labelledby="outcome-title">
+        <div class="project-detail-heading implementation-heading">
+          <div>
+            <p class="project-detail-section-label">OUTCOME</p>
+            <h2 id="outcome-title" data-ko="결과" data-en="Outcome">결과</h2>
+          </div>
+        </div>
+
+        <ul class="detail-list">
+          <li
+            data-ko="현장별로 직접 작성하던 Three.js 모델을 데이터 기반의 재사용 가능한 framework로 전환"
+            data-en="Converted manually coded Three.js scenes into a reusable data-driven framework"
+          >
+            현장별로 직접 작성하던 Three.js 모델을 데이터 기반의 재사용 가능한 framework로 전환
+          </li>
+          <li
+            data-ko="비정형 현장 지식을 LLM 기반 인터뷰를 통해 구조화된 site data로 변환"
+            data-en="Structured unstructured field knowledge through an LLM-based interview workflow"
+          >
+            비정형 현장 지식을 LLM 기반 인터뷰를 통해 구조화된 site data로 변환
+          </li>
+          <li
+            data-ko="현장 정보 부족 시 필요한 질문을 자동으로 생성하는 adaptive interview workflow 구현"
+            data-en="Implemented adaptive questioning based on missing and uncertain site information"
+          >
+            현장 정보 부족 시 필요한 질문을 자동으로 생성하는 adaptive interview workflow 구현
+          </li>
+          <li
+            data-ko="서로 다른 현장 시나리오에서 공통 3D modeling framework 적용 가능성 검증"
+            data-en="Validated a common 3D modeling framework across multiple industrial-site scenarios"
+          >
+            서로 다른 현장 시나리오에서 공통 3D modeling framework 적용 가능성 검증
+          </li>
+          <li
+            data-ko="3D 현장 페이지 제작 소요 시간 약 4시간 → 약 25분"
+            data-en="Reduced site-specific 3D page creation from approximately 4 hours to approximately 25 minutes"
+          >
+            3D 현장 페이지 제작 소요 시간 약 4시간 → 약 25분
+          </li>
+        </ul>
+      </section>
+
+      <section class="project-detail-panel implementation-panel" aria-labelledby="stack-title">
+        <div class="project-detail-heading implementation-heading">
+          <div>
+            <p class="project-detail-section-label">TECHNOLOGY STACK</p>
+            <h2 id="stack-title" data-ko="사용 기술" data-en="Technology Stack">사용 기술</h2>
+          </div>
+        </div>
+
+        <div>
+          <p class="technical-detail-label">AI / AGENT</p>
+          <div class="tag-list">
+            <span>LLM</span>
+            <span>Claude</span>
+            <span>Prompt Engineering</span>
+            <span>Structured Output</span>
+            <span>Agent Workflow</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="technical-detail-label">3D / WEB</p>
+          <div class="tag-list">
+            <span>Three.js</span>
+            <span>WebGL</span>
+            <span>JavaScript</span>
+            <span>HTML / CSS</span>
+          </div>
+        </div>
+
+        <div>
+          <p class="technical-detail-label">DATA</p>
+          <div class="tag-list">
+            <span>JSON</span>
+            <span>Structured Site Data</span>
+            <span>Schema-based Representation</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-detail-panel patent-detail-panel" aria-labelledby="ongoing-title">
+        <div class="project-detail-heading patent-detail-heading">
+          <div>
+            <p class="project-detail-section-label">ONGOING DEVELOPMENT</p>
+            <h2 id="ongoing-title" data-ko="진행 중인 개발" data-en="Ongoing Development">진행 중인 개발</h2>
+          </div>
+          <span class="patent-status" data-ko="진행 중" data-en="In progress">진행 중</span>
+        </div>
+
+        <p
+          class="implementation-motivation"
+          data-ko="웹 기반 3D 시각화에서 나아가, 사진과 2D 도면으로부터 파라메트릭 엔지니어링 CAD를 생성하는 방향으로 프레임워크를 확장하고 있습니다."
+          data-en="Extending the framework from web-based 3D visualization toward parametric engineering CAD generation from images and 2D drawings."
+        >
+          웹 기반 3D 시각화에서 나아가, 사진과 2D 도면으로부터 파라메트릭 엔지니어링 CAD를 생성하는 방향으로 프레임워크를 확장하고 있습니다.
+        </p>
+
+        <ul class="detail-list">
+          <li data-ko="2D 엔지니어링 도면 → 3D 모델링" data-en="2D engineering drawing to 3D modeling">2D 엔지니어링 도면 → 3D 모델링</li>
+          <li data-ko="파라메트릭 CAD 생성" data-en="Parametric CAD generation">파라메트릭 CAD 생성</li>
+          <li data-ko="CadQuery 연동" data-en="CadQuery integration">CadQuery 연동</li>
+          <li data-ko="STL / STEP 출력" data-en="STL / STEP output">STL / STEP 출력</li>
+          <li data-ko="엔지니어링 형상 인식" data-en="Engineering feature recognition">엔지니어링 형상 인식</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="project-detail-footer">
+      <div class="page-shell">
+        <span>© 2026 Eunha Sim</span>
+      </div>
+    </footer>
+
+    <script src="../assets/project-detail.js?v=2.29"></script>
+    <script src="../assets/project-3d-agent-demos.js?v=2.29"></script>
+  </body>
+</html>
